@@ -40,6 +40,8 @@ limitations under the License.
           <archive>
             <manifestEntries>
               <Gerrit-PluginName>metrics-reporter-prometheus</Gerrit-PluginName>
+              <Gerrit-Module>com.googlesource.gerrit.plugins.metricsreporters.GerritPrometheusModule</Gerrit-Module>
+              <Gerrit-HttpModule>com.googlesource.gerrit.plugins.metricsreporters.GerritPrometheusHttpModule</Gerrit-HttpModule>
               <Implementation-Vendor>Gerrit Code Review</Implementation-Vendor>
               <Implementation-URL>https://gerrit-review.googlesource.com/#/admin/projects/plugins/metrics-reporter-prometheus</Implementation-URL>
               <Implementation-Title>Prometheus metrics plugin</Implementation-Title>
