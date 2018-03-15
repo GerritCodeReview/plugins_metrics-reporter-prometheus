@@ -25,6 +25,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("serial")
 @Singleton
 public class GerritPrometheusExporter extends MetricsServlet {
   CapabilityChecker capabilityChecker;
