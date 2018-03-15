@@ -13,26 +13,43 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreporters;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.gerrit.extensions.annotations.PluginName;
+import com.google.gerrit.extensions.api.access.PluginPermission;
+import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.account.CapabilityControl;
+import com.google.gerrit.server.permissions.GlobalPermission;
+import com.google.gerrit.server.permissions.PermissionBackend;
+import com.google.gerrit.server.permissions.PermissionBackendException;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import com.google.inject.Singleton;
 
+@Singleton
 public class CapabilityChecker {
+  private final PermissionBackend permissionBackend;
   private final Provider<CurrentUser> userProvider;
-  private final String capabilityName;
-
+  private final String pluginName;
   @Inject
-  CapabilityChecker(Provider<CurrentUser> userProvider,
+  CapabilityChecker(
+      PermissionBackend permissionBackend,
+      Provider<CurrentUser> userProvider,
       @PluginName String pluginName) {
+    this.permissionBackend = permissionBackend;
     this.userProvider = userProvider;
-    this.capabilityName = String.format("%s-%s", pluginName,
-        ViewMetricsCapability.ID);
+    this.pluginName = pluginName;
   }
-
   public boolean canViewMetrics() {
-    CapabilityControl ctl = userProvider.get().getCapabilities();
-    return ctl.canAdministrateServer() || ctl.canPerform(capabilityName);
+    try {
+      permissionBackend
+          .user(userProvider)
+          .checkAny(
+              ImmutableSet.of(
+                  GlobalPermission.ADMINISTRATE_SERVER,
+                  new PluginPermission(pluginName, ViewMetricsCapability.ID)));
+      return true;
+    } catch (AuthException | PermissionBackendException e) {
+      return false;
+    }
   }
 }

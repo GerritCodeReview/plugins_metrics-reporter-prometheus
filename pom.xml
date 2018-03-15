@@ -23,7 +23,7 @@ limitations under the License.
   <artifactId>metrics-reporter-prometheus</artifactId>
   <name>metrics-reporter-prometheus</name>
   <packaging>jar</packaging>
-  <version>2.14</version>
+  <version>2.15</version>
   <properties>
     <Gerrit-ApiType>plugin</Gerrit-ApiType>
     <Gerrit-ApiVersion>${project.version}</Gerrit-ApiVersion>
