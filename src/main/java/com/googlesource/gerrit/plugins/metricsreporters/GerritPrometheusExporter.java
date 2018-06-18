@@ -31,8 +31,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   CapabilityChecker capabilityChecker;
 
   @Inject
-  public GerritPrometheusExporter(MetricRegistry registry,
-      CapabilityChecker capabilityChecker) {
+  public GerritPrometheusExporter(MetricRegistry registry, CapabilityChecker capabilityChecker) {
     this.capabilityChecker = capabilityChecker;
 
     // Hook the Dropwizard registry into the Prometheus registry
@@ -47,8 +46,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
       super.service(req, res);
     } else {
       HttpServletResponse httpResponse = (HttpServletResponse) res;
-      httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN,
-          "Forbidden access");
-	  }
+      httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden access");
+    }
   }
 };

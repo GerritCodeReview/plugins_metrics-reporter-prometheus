@@ -24,11 +24,9 @@ public class CapabilityChecker {
   private final String capabilityName;
 
   @Inject
-  CapabilityChecker(Provider<CurrentUser> userProvider,
-      @PluginName String pluginName) {
+  CapabilityChecker(Provider<CurrentUser> userProvider, @PluginName String pluginName) {
     this.userProvider = userProvider;
-    this.capabilityName = String.format("%s-%s", pluginName,
-        ViewMetricsCapability.ID);
+    this.capabilityName = String.format("%s-%s", pluginName, ViewMetricsCapability.ID);
   }
 
   public boolean canViewMetrics() {

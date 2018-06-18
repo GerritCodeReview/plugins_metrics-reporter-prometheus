@@ -21,7 +21,7 @@ public class GerritPrometheusModule extends AbstractModule {
   @Override
   protected void configure() {
     bind(CapabilityDefinition.class)
-      .annotatedWith(Exports.named(ViewMetricsCapability.ID))
-      .to(ViewMetricsCapability.class);
+        .annotatedWith(Exports.named(ViewMetricsCapability.ID))
+        .to(ViewMetricsCapability.class);
   }
 }
