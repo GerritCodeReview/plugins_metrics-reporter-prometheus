@@ -44,7 +44,7 @@ public class CapabilityChecker {
   public boolean canViewMetrics() {
     try {
       permissionBackend
-          .user(userProvider)
+          .user(userProvider.get())
           .checkAny(
               ImmutableSet.of(
                   GlobalPermission.ADMINISTRATE_SERVER,
