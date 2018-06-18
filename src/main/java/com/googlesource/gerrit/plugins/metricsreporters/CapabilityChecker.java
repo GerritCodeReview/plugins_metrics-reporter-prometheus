@@ -30,6 +30,7 @@ public class CapabilityChecker {
   private final PermissionBackend permissionBackend;
   private final Provider<CurrentUser> userProvider;
   private final String pluginName;
+
   @Inject
   CapabilityChecker(
       PermissionBackend permissionBackend,
@@ -39,6 +40,7 @@ public class CapabilityChecker {
     this.userProvider = userProvider;
     this.pluginName = pluginName;
   }
+
   public boolean canViewMetrics() {
     try {
       permissionBackend
