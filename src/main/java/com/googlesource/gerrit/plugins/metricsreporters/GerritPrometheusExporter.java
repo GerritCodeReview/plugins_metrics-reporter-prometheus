@@ -14,6 +14,10 @@
 package com.googlesource.gerrit.plugins.metricsreporters;
 
 import com.codahale.metrics.MetricRegistry;
+import com.google.common.base.Strings;
+import com.google.gerrit.extensions.annotations.PluginName;
+import com.google.gerrit.server.config.PluginConfig;
+import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import io.prometheus.client.CollectorRegistry;
@@ -23,16 +27,28 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 @Singleton
 public class GerritPrometheusExporter extends MetricsServlet {
+  private static final String AUTHORIZATION_HEADER = "Authorization";
+  private static final String PROMETHEUS_BEARER_TOKEN = "prometheusBearerToken";
+
   private final CapabilityChecker capabilityChecker;
+  private final PluginConfig cfg;
+  private final boolean useBearerToken;
 
   @Inject
-  public GerritPrometheusExporter(MetricRegistry registry, CapabilityChecker capabilityChecker) {
+  public GerritPrometheusExporter(
+      MetricRegistry registry,
+      CapabilityChecker capabilityChecker,
+      PluginConfigFactory cfgFactory,
+      @PluginName String pluginName) {
     this.capabilityChecker = capabilityChecker;
+    this.cfg = cfgFactory.getFromGerritConfig(pluginName);
+    this.useBearerToken = isPropertyInPluginConfig(PROMETHEUS_BEARER_TOKEN);
 
     // Hook the Dropwizard registry into the Prometheus registry
     // via the DropwizardExports collector.
@@ -42,7 +58,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   @Override
   public void service(ServletRequest req, ServletResponse res)
       throws ServletException, IOException {
-    if (capabilityChecker.canViewMetrics()) {
+    if (capabilityChecker.canViewMetrics() || canExportUsingBearerToken(req)) {
       super.service(req, res);
     } else {
       HttpServletResponse httpResponse = (HttpServletResponse) res;
@@ -50,5 +66,19 @@ public class GerritPrometheusExporter extends MetricsServlet {
     }
   }
 
-  
+  private boolean canExportUsingBearerToken(ServletRequest req) {
+    if (!useBearerToken) {
+      return false;
+    }
+
+    HttpServletRequest httpRequest = (HttpServletRequest) req;
+    return httpRequest.getHeader(AUTHORIZATION_HEADER) != null
+        && httpRequest
+            .getHeader(AUTHORIZATION_HEADER)
+            .equals("Bearer " + cfg.getString(PROMETHEUS_BEARER_TOKEN));
+  }
+
+  private boolean isPropertyInPluginConfig(String name) {
+    return !Strings.isNullOrEmpty(cfg.getString(name));
+  }
 }
