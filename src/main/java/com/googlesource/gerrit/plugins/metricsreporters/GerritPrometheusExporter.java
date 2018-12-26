@@ -49,4 +49,4 @@ public class GerritPrometheusExporter extends MetricsServlet {
       httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden access");
     }
   }
-};
+}
