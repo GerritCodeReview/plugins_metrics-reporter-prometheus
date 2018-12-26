@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 @Singleton
 public class GerritPrometheusExporter extends MetricsServlet {
-  CapabilityChecker capabilityChecker;
+  private final CapabilityChecker capabilityChecker;
 
   @Inject
   public GerritPrometheusExporter(MetricRegistry registry, CapabilityChecker capabilityChecker) {
@@ -49,4 +49,6 @@ public class GerritPrometheusExporter extends MetricsServlet {
       httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden access");
     }
   }
+
+  
 }
