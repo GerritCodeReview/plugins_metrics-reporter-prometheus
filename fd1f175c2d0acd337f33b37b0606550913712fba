@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "14f71f7a_f5e7c591",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2018-12-27T15:44:42Z",
+      "side": 1,
+      "message": "No need to define authorization header again here, we can just import an existing authorization header from:\n\nimport static com.google.common.net.HttpHeaders.AUTHORIZATION;\n\nor\n\nimport static org.apache.http.HttpHeaders.AUTHORIZATION;",
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5f4cf00_ab303212",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2018-12-27T15:44:42Z",
+      "side": 1,
+      "message": "if we wanted to call getHeader only once we could do something like this:\n\n    HttpServletRequest httpRequest \u003d (HttpServletRequest) req;\n    return Optional\n             .ofNullable(httpRequest.getHeader(AUTHORIZATION_HEADER))\n             .map( a -\u003e a.equals(\"Bearer \" + cfg.getString(PROMETHEUS_BEARER_TOKEN)))\n             .orElse(false);",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 72
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cb543f9_b7dce930",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2018-12-27T15:44:42Z",
+      "side": 1,
+      "message": "I think here would be the right section to mention that access can also be allowed through bearer token, and not just via the view metrics capability.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "13ec8bf2_98c49d42",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
