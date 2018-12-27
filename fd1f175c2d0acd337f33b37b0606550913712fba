@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f232e0f_6f093459",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-27T17:26:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14f71f7a_f5e7c591",
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f5f4cf00_ab303212",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "179857e1_dd5050a8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-27T17:26:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5f4cf00_ab303212",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 72
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -89,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "e81331db_77508164",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-27T17:26:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b8fc275_73bde828",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13ec8bf2_98c49d42",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -109,6 +175,30 @@
       "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "471ccbc3_76ec3652",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-27T17:26:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13ec8bf2_98c49d42",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -156,6 +246,30 @@
       "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db1b6d80_5eb95a8a",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-27T17:26:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6616dec5_3945e09b",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 114
+      },
+      "revId": "fd1f175c2d0acd337f33b37b0606550913712fba",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
