@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8a656c80_9d918c8f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-12-30T21:55:03Z",
+      "side": 1,
+      "message": "Yes to both, it is automatically managed by the Gerrit config.",
+      "parentUuid": "cbaf80a9_29c9d8af",
+      "range": {
+        "startLine": 51,
+        "startChar": 15,
+        "endLine": 51,
+        "endChar": 45
+      },
+      "revId": "fc2b415800686c4834de9fbee9f5e3c0a2e9ff7b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebd827e4_6a592baa",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-29T10:38:08Z",
       "side": 1,
       "message": "should the token not be read in constructor as well?\n\notherwise, there is no point storing \u0027useBearerToken\u0027 either, since the settings are read on each call, and this method could thus be written like this:\n\n String token \u003d cfg.getString(PROMETHEUS_BEARER_TOKEN);\n if (Strings.isNullOrEmpty(token)) {\n   return false;\n }\n HttpServletRequest httpRequest \u003d (HttpServletRequest) req;\n return Optional.ofNullable(httpRequest.getHeader(HttpHeaders.AUTHORIZATION))\n     .map(h -\u003e h.equals(\"Bearer \" + token))\n     .orElse(false);",
+      "range": {
+        "startLine": 77,
+        "startChar": 39,
+        "endLine": 77,
+        "endChar": 76
+      },
+      "revId": "fc2b415800686c4834de9fbee9f5e3c0a2e9ff7b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b17ec01b_cd2f4be5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-12-30T21:55:03Z",
+      "side": 1,
+      "message": "\u003e should the token not be read in constructor as well?\n\nGood point, it would then be faster at runtime for the evaluation at each call.",
+      "parentUuid": "ebd827e4_6a592baa",
       "range": {
         "startLine": 77,
         "startChar": 39,
