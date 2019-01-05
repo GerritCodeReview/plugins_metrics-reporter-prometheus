@@ -93,6 +93,30 @@
       "revId": "fc2b415800686c4834de9fbee9f5e3c0a2e9ff7b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c472e1b5_678c41fe",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2019-01-05T12:36:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b17ec01b_cd2f4be5",
+      "range": {
+        "startLine": 77,
+        "startChar": 39,
+        "endLine": 77,
+        "endChar": 76
+      },
+      "revId": "fc2b415800686c4834de9fbee9f5e3c0a2e9ff7b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
