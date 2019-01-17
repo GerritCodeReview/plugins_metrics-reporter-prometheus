@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7db009b5_58e928ac",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/GerritPrometheusExporter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2019-01-17T10:12:56Z",
+      "side": 1,
+      "message": "Nit: it would be more readable if written with more semantics on its intent.\n\nExample:\n    \n   return Optional.ofNullable(httpRequest.getHeader(HttpHeaders.AUTHORIZATION))\n        .anyMatch(h -\u003e h.equals(\"Bearer \" + prometheusBearerToken));\n\nSee: https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#anyMatch-java.util.function.Predicate-",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 23
+      },
+      "revId": "1b551719640b6a9f5b8b63ac72ebb5a112006a67",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d2961e6_4ceca08b",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2019-01-17T10:12:56Z",
+      "side": 1,
+      "message": "Nit: unneeded empty line",
+      "revId": "1b551719640b6a9f5b8b63ac72ebb5a112006a67",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
