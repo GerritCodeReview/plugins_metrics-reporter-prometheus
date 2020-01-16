@@ -24,6 +24,11 @@ authentication and do not check any ACL related to the ‘View Metrics’ global
 See [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration)
 for how to configure the integration with Prometheus.
 
+plugin.@PLUGIN@.excludeMetrics
+:   String used to exclude metrics from the report. It can be specified multiple times.
+    Parsed as regular expression. Note, ^ and $ are automatically added around the string.
+
+
 [Back to @PLUGIN@ documentation index][index]
 
 [index]: index.html

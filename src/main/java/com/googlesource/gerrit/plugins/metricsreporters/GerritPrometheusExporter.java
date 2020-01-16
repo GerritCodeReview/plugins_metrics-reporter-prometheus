@@ -13,6 +13,8 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreporters;
 
+import com.codahale.metrics.Metric;
+import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.base.Strings;
 import com.google.common.net.HttpHeaders;
@@ -24,7 +26,10 @@ import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.dropwizard.DropwizardExports;
 import io.prometheus.client.exporter.MetricsServlet;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -35,6 +40,7 @@ import javax.servlet.http.HttpServletResponse;
 @Singleton
 public class GerritPrometheusExporter extends MetricsServlet {
   private static final String PROMETHEUS_BEARER_TOKEN = "prometheusBearerToken";
+  private static final String EXCLUDE_KEY = "excludeMetrics";
 
   private final CapabilityChecker capabilityChecker;
   private final String prometheusBearerToken;
@@ -49,9 +55,28 @@ public class GerritPrometheusExporter extends MetricsServlet {
     this.prometheusBearerToken =
         cfgFactory.getFromGerritConfig(pluginName).getString(PROMETHEUS_BEARER_TOKEN);
 
+    /* Copy the registry to avoid filtering the global one */
+    MetricRegistry filteredRegistry = new MetricRegistry();
+    filteredRegistry.registerAll(registry);
+
+    Set<String> excludedMetrics = new HashSet<>();
+    excludedMetrics.addAll(
+        Arrays.asList(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY)));
+
+    excludedMetrics.forEach(
+        exclude -> {
+          filteredRegistry.removeMatching(
+              new MetricFilter() {
+                @Override
+                public boolean matches(String name, Metric metric) {
+                  return name.matches(exclude);
+                }
+              });
+        });
+
     // Hook the Dropwizard registry into the Prometheus registry
     // via the DropwizardExports collector.
-    CollectorRegistry.defaultRegistry.register(new DropwizardExports(registry));
+    CollectorRegistry.defaultRegistry.register(new DropwizardExports(filteredRegistry));
   }
 
   @Override
