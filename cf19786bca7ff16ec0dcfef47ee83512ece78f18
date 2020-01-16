@@ -141,6 +141,30 @@
       "revId": "cf19786bca7ff16ec0dcfef47ee83512ece78f18",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61536373_b770cbbc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-01-16T16:25:03Z",
+      "side": 1,
+      "message": "\u003e But changing it now for the jmx reporter could break existing installations, if the plugin is updated and the exclusions are suddenly not working anymore. :-(\n\nYes, I would suggest on the jmx reporter to:\n\n1. Deprecate the use of a separate config file but stil supporting it\n2. In the next version, removing it altogether.\n\nAgreed that we should NOT break the compatibility in a stable release.\n\n\u003e But let me do it here, since this plugin already has configuration inside the gerrit.config\n\n+1",
+      "parentUuid": "fa8f0d9c_0dc78817",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "cf19786bca7ff16ec0dcfef47ee83512ece78f18",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
