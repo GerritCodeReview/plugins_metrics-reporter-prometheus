@@ -11,6 +11,12 @@ This capability can be configured in the 'Global Capabilities' section of the
 It is possible to allow anonymous access to the metrics by giving the capability
 to the 'Anonymous Users' group.
 
+plugin.@PLUGIN@.excludeMetrics
+:   String used to exclude metrics from the report. It can be specified multiple times.
+    Parsed as regular expression. Note, ^ and $ are automatically added around the string.
+    By default no metric is excluded.
+    For example, to exclude all cache metrics, use: `excludeMetrics = cache.*`
+
 [Back to @PLUGIN@ documentation index][index]
 
 [index]: index.html
