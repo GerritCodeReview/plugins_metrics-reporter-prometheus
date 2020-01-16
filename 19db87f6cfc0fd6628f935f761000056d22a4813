@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "776e4f70_c5511192",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-01-16T16:44:46Z",
+      "side": 1,
+      "message": "Default: empty.\n\nExample: excludeMetrics \u003d cache.*",
+      "revId": "19db87f6cfc0fd6628f935f761000056d22a4813",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
