@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ad6ca458_acb543d4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporters/Configuration.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-01-16T16:04:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6a89a4e_2e2eb69e",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 92
+      },
+      "revId": "cf19786bca7ff16ec0dcfef47ee83512ece78f18",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85404ea8_8b475300",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-01-16T15:48:07Z",
       "side": 1,
       "message": "Why introducing a new configuration file? Can\u0027t we just add the exclude to the current plugin\u0027s configuration?\n\nExample: plugin.@PLUGIN@.excludeMetrics",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "cf19786bca7ff16ec0dcfef47ee83512ece78f18",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01240a05_462afed1",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-01-16T16:04:42Z",
+      "side": 1,
+      "message": "Yes, I thought about it. I kept it the same as in the jmx reporter plugin, since I think it would be nice to have it consistent between the plugins. But I am open to move it to the gerrit.config file.",
+      "parentUuid": "85404ea8_8b475300",
       "range": {
         "startLine": 29,
         "startChar": 0,
