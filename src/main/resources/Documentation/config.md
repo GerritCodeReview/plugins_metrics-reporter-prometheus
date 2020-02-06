@@ -25,10 +25,11 @@ See [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/conf
 for how to configure the integration with Prometheus.
 
 plugin.@PLUGIN@.excludeMetrics
-:   String used to exclude metrics from the report. It can be specified multiple times.
-    Parsed as regular expression. Note, ^ and $ are automatically added around the string.
+:   Regex pattern used to exclude metrics from the report. It can be specified multiple times.
+    Note that pattern matching is done on the whole metric name, not only on a part of it.
     By default no metric is excluded.
     For example, to exclude all cache metrics, use: `excludeMetrics = cache.*`
+
 
 [Back to @PLUGIN@ documentation index][index]
 
