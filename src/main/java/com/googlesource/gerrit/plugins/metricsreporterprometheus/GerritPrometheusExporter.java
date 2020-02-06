@@ -13,8 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreporterprometheus;
 
-import com.codahale.metrics.Metric;
-import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.base.Strings;
 import com.google.common.net.HttpHeaders;
@@ -55,24 +53,13 @@ public class GerritPrometheusExporter extends MetricsServlet {
     this.prometheusBearerToken =
         cfgFactory.getFromGerritConfig(pluginName).getString(PROMETHEUS_BEARER_TOKEN);
 
-    /* Copy the registry to avoid filtering the global one */
-    MetricRegistry filteredRegistry = new MetricRegistry();
-    filteredRegistry.registerAll(registry);
-
     Set<String> excludedMetrics = new HashSet<>();
     excludedMetrics.addAll(
         Arrays.asList(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY)));
 
-    excludedMetrics.forEach(
-        exclude -> {
-          filteredRegistry.removeMatching(
-              new MetricFilter() {
-                @Override
-                public boolean matches(String name, Metric metric) {
-                  return name.matches(exclude);
-                }
-              });
-        });
+    FilteredMetricRegistry filteredRegistry =
+        new FilteredMetricRegistry(
+            registry, s -> excludedMetrics.stream().anyMatch(e -> s.matches(e)));
 
     // Hook the Dropwizard registry into the Prometheus registry
     // via the DropwizardExports collector.
