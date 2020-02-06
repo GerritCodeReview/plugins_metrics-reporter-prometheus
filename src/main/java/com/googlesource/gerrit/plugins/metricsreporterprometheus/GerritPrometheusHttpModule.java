@@ -11,17 +11,13 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package com.googlesource.gerrit.plugins.metricsreporters;
+package com.googlesource.gerrit.plugins.metricsreporterprometheus;
 
-import com.google.gerrit.extensions.annotations.Exports;
-import com.google.gerrit.extensions.config.CapabilityDefinition;
-import com.google.inject.AbstractModule;
+import com.google.inject.servlet.ServletModule;
 
-public class GerritPrometheusModule extends AbstractModule {
+public class GerritPrometheusHttpModule extends ServletModule {
   @Override
-  protected void configure() {
-    bind(CapabilityDefinition.class)
-        .annotatedWith(Exports.named(ViewMetricsCapability.ID))
-        .to(ViewMetricsCapability.class);
+  protected void configureServlets() {
+    serve("/metrics").with(GerritPrometheusExporter.class);
   }
 }
