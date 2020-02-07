@@ -46,6 +46,30 @@
       "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b5f0f0e_947cf4f9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-02-07T12:59:01Z",
+      "side": 1,
+      "message": "\u003e plugins into one plugin. Obviously (just look at my two series for the prometheus and jmx reporter) there is a potential for some code to be shared. I wouldn\u0027t go for the extraction\n\u003e of the common logic into an \"abstract\" plugin (like the its* family of plugins) because\n\u003e this tends to be hard to maintain.\n\nMerging them all metrics plugins together may require per-metric enabling based on plugin configuration. Unless all of the metrics are guaranteed to be overhead-less on the monitored system (Gerrit). Or at least guaranteed to minimize their overhead to acceptable levels. I\u0027d tend to agree with not repeating the its-base experience.",
+      "parentUuid": "c8ac29f0_7f72e91c",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 65
+      },
+      "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
