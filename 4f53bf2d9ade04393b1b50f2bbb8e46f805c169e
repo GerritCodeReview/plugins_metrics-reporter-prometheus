@@ -16,6 +16,24 @@
       "revId": "4f53bf2d9ade04393b1b50f2bbb8e46f805c169e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84b9d05a_25a48b23",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/FilteredMetricRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2020-02-07T15:03:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51a9ef73_f6f4e5cc",
+      "revId": "4f53bf2d9ade04393b1b50f2bbb8e46f805c169e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
