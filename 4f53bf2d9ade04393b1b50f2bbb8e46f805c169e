@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51a9ef73_f6f4e5cc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/FilteredMetricRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2020-02-07T15:01:37Z",
+      "side": 1,
+      "message": "Just found out that there is:\n\n  MetricRegistry.getGauges(MetricFilter filter)\n\nmethod, which we can use here. In that case the filtering will happen inside that\nmethod and we will save a few lines of code here.",
+      "revId": "4f53bf2d9ade04393b1b50f2bbb8e46f805c169e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
