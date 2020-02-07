@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21a9dca4_c6bed7ba",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-07T00:14:33Z",
+      "side": 1,
+      "message": "Would metricsreporters.prometheus be better?",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 65
+      },
+      "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
