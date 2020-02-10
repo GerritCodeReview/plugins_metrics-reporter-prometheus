@@ -94,6 +94,30 @@
       "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4219fa56_f2e4c6df",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2020-02-10T20:49:40Z",
+      "side": 1,
+      "message": "Yes, SGTM.\nHowever, before submitting the rename I would appreciate a feedback on the main\nchange in this and the other (jmx) series. It is the second change in both series.",
+      "parentUuid": "21593192_068048f9",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 65
+      },
+      "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
