@@ -70,6 +70,30 @@
       "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21593192_068048f9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-10T01:42:50Z",
+      "side": 1,
+      "message": "I\u0027d also rather not follow the its-base pattern. Shall we go with this rename for now, and discuss merging the plugins separately on the mailing list or issue tracker?",
+      "parentUuid": "9b5f0f0e_947cf4f9",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 65
+      },
+      "revId": "26b016ffea84b4e0eedd4b6777977e8c5f7ac247",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
