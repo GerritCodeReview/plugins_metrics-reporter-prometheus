@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "652a02fc_187f7e91",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-02-11T15:27:07Z",
+      "side": 1,
+      "message": "JMX",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "ca967d5a9952243a273c395a53c12564dbe8d701",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
