@@ -11,10 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package com.googlesource.gerrit.plugins.metricsreporters;
+package com.googlesource.gerrit.plugins.metricsreporterprometheus;
 
-import com.codahale.metrics.Metric;
-import com.codahale.metrics.MetricFilter;
+import static java.util.stream.Collectors.toList;
+
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.base.Strings;
 import com.google.common.net.HttpHeaders;
@@ -27,9 +27,9 @@ import io.prometheus.client.dropwizard.DropwizardExports;
 import io.prometheus.client.exporter.MetricsServlet;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
-import java.util.Set;
+import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -55,24 +55,14 @@ public class GerritPrometheusExporter extends MetricsServlet {
     this.prometheusBearerToken =
         cfgFactory.getFromGerritConfig(pluginName).getString(PROMETHEUS_BEARER_TOKEN);
 
-    /* Copy the registry to avoid filtering the global one */
-    MetricRegistry filteredRegistry = new MetricRegistry();
-    filteredRegistry.registerAll(registry);
+    List<Pattern> excludes =
+        Arrays.stream(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY))
+            .map(Pattern::compile)
+            .collect(toList());
 
-    Set<String> excludedMetrics = new HashSet<>();
-    excludedMetrics.addAll(
-        Arrays.asList(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY)));
-
-    excludedMetrics.forEach(
-        exclude -> {
-          filteredRegistry.removeMatching(
-              new MetricFilter() {
-                @Override
-                public boolean matches(String name, Metric metric) {
-                  return name.matches(exclude);
-                }
-              });
-        });
+    FilteredMetricRegistry filteredRegistry =
+        new FilteredMetricRegistry(
+            registry, s -> excludes.stream().anyMatch(e -> e.matcher(s).matches()));
 
     // Hook the Dropwizard registry into the Prometheus registry
     // via the DropwizardExports collector.

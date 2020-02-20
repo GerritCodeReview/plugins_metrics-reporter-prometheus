@@ -5,8 +5,8 @@ gerrit_plugin(
     srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
         "Gerrit-PluginName: metrics-reporter-prometheus",
-        "Gerrit-Module: com.googlesource.gerrit.plugins.metricsreporters.GerritPrometheusModule",
-        "Gerrit-HttpModule: com.googlesource.gerrit.plugins.metricsreporters.GerritPrometheusHttpModule",
+        "Gerrit-Module: com.googlesource.gerrit.plugins.metricsreporterprometheus.GerritPrometheusModule",
+        "Gerrit-HttpModule: com.googlesource.gerrit.plugins.metricsreporterprometheus.GerritPrometheusHttpModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
     deps = [
