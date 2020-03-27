@@ -42,6 +42,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   private static final String PROMETHEUS_BEARER_TOKEN = "prometheusBearerToken";
   private static final String EXCLUDE_KEY = "excludeMetrics";
 
+  private final GerritBuildInformationMetric gerritBuildInfoMetric;
   private final CapabilityChecker capabilityChecker;
   private final String prometheusBearerToken;
 
@@ -54,6 +55,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
     this.capabilityChecker = capabilityChecker;
     this.prometheusBearerToken =
         cfgFactory.getFromGerritConfig(pluginName).getString(PROMETHEUS_BEARER_TOKEN);
+    this.gerritBuildInfoMetric = new GerritBuildInformationMetric();
 
     List<Pattern> excludes =
         Arrays.stream(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY))
@@ -73,6 +75,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   public void service(ServletRequest req, ServletResponse res)
       throws ServletException, IOException {
     if (capabilityChecker.canViewMetrics() || canExportUsingPrometheusBearerToken(req)) {
+      gerritBuildInfoMetric.compute();
       super.service(req, res);
     } else {
       HttpServletResponse httpResponse = (HttpServletResponse) res;
