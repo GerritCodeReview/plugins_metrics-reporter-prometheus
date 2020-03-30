@@ -22,6 +22,30 @@
       "revId": "05a0424cdbf16af93db315ad3b61a98ec067d356",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20f7f1d2_aaa17f56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-03-30T08:54:28Z",
+      "side": 1,
+      "message": "Mostly, this adds flexibility. E.g. the revision can be used to automatically generate a link in the dashboard to the commit in gitiles.\nIn addition, having version and revision separately is more consistent with what we get from Prometheus and Loki.\n\nHonestly, the benefit is probably small, but I also don\u0027t see a disadvantage. Some labels are even more stable and the others are as stable as with using the unsplit version. So for the indexing in Prometheus this does not make a difference.\n\nWhy would you prefer to not split the version?",
+      "parentUuid": "01fa0be7_9500421d",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "05a0424cdbf16af93db315ad3b61a98ec067d356",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
