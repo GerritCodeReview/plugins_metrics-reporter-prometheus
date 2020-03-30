@@ -46,6 +46,30 @@
       "revId": "05957bca1ebfc760fdd7f5ce66fd5dee50cb2515",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c321d47e_46871c6d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/GerritBuildInformationMetric.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-03-30T07:13:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b116765d_f4786aa9",
+      "range": {
+        "startLine": 32,
+        "startChar": 45,
+        "endLine": 32,
+        "endChar": 59
+      },
+      "revId": "05957bca1ebfc760fdd7f5ce66fd5dee50cb2515",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
