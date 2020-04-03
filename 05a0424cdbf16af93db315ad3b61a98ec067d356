@@ -70,6 +70,30 @@
       "revId": "05a0424cdbf16af93db315ad3b61a98ec067d356",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef1ae356_7c0a6c07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-04-03T10:40:41Z",
+      "side": 1,
+      "message": "I now removed the commits_ahead and dirty label. You\u0027re right, they don\u0027t provide a lot of useful information.",
+      "parentUuid": "84f5d6b1_6344fdb5",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "05a0424cdbf16af93db315ad3b61a98ec067d356",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
