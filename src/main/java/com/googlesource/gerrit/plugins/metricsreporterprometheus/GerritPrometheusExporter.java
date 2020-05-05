@@ -20,6 +20,7 @@ import com.google.common.base.Strings;
 import com.google.common.net.HttpHeaders;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.PluginConfigFactory;
+import com.google.gerrit.server.plugins.PluginLoader;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import io.prometheus.client.CollectorRegistry;
@@ -43,6 +44,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   private static final String EXCLUDE_KEY = "excludeMetrics";
 
   private final GerritBuildInformationMetric gerritBuildInfoMetric;
+  private final GerritPluginInformationMetrics gerritPluginInformationMetrics;
   private final CapabilityChecker capabilityChecker;
   private final String prometheusBearerToken;
 
@@ -51,11 +53,13 @@ public class GerritPrometheusExporter extends MetricsServlet {
       MetricRegistry registry,
       CapabilityChecker capabilityChecker,
       PluginConfigFactory cfgFactory,
+      PluginLoader pluginLoader,
       @PluginName String pluginName) {
     this.capabilityChecker = capabilityChecker;
     this.prometheusBearerToken =
         cfgFactory.getFromGerritConfig(pluginName).getString(PROMETHEUS_BEARER_TOKEN);
     this.gerritBuildInfoMetric = new GerritBuildInformationMetric();
+    this.gerritPluginInformationMetrics = new GerritPluginInformationMetrics(pluginLoader);
 
     List<Pattern> excludes =
         Arrays.stream(cfgFactory.getFromGerritConfig(pluginName).getStringList(EXCLUDE_KEY))
@@ -76,6 +80,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
       throws ServletException, IOException {
     if (capabilityChecker.canViewMetrics() || canExportUsingPrometheusBearerToken(req)) {
       gerritBuildInfoMetric.compute();
+      gerritPluginInformationMetrics.compute();
       super.service(req, res);
     } else {
       HttpServletResponse httpResponse = (HttpServletResponse) res;
