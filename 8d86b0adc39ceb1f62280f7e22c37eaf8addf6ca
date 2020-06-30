@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-prometheus": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "NOT_RELEVANT",
+      "message": "Project has no jobs configured",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/e7ec111e04b7466dbf53cb34612a54ed",
       "started": "2020-06-30T07:21:59Z",
+      "finished": "2020-06-30T07:22:04Z",
       "created": "2020-06-30T07:22:00Z",
-      "updated": "2020-06-30T07:22:00Z"
+      "updated": "2020-06-30T07:22:04Z"
     }
   }
 }
