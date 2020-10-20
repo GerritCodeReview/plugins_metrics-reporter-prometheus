@@ -16,6 +16,23 @@
       "message": "Tested E2E, it works as expected.",
       "revId": "4bd39e08e54dae2b62a51af992297a2a5308f864",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5be8b0a9_dd5c59cc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-10-20T13:15:01Z",
+      "side": 1,
+      "message": "nit: unrelated?",
+      "revId": "4bd39e08e54dae2b62a51af992297a2a5308f864",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
