@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a244420_fa0a62e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-10-21T15:45:25Z",
+      "side": 1,
+      "message": "Wrap issue.",
+      "range": {
+        "startLine": 10,
+        "startChar": 67,
+        "endLine": 10,
+        "endChar": 73
+      },
+      "revId": "3ffae5a3824c57f7406832159bfbd42918f90f95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4392626d_486c6362",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-10-21T15:45:25Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 64,
+        "endLine": 15,
+        "endChar": 75
+      },
+      "revId": "3ffae5a3824c57f7406832159bfbd42918f90f95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ec6dd04_983cc08f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-10-21T15:45:25Z",
+      "side": 1,
+      "message": "Same.",
+      "range": {
+        "startLine": 16,
+        "startChar": 72,
+        "endLine": 16,
+        "endChar": 75
+      },
+      "revId": "3ffae5a3824c57f7406832159bfbd42918f90f95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
