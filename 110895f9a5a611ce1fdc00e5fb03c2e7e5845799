@@ -68,6 +68,41 @@
       "message": "Why 2.14 ? That\u0027s way beyond EOL ...",
       "revId": "110895f9a5a611ce1fdc00e5fb03c2e7e5845799",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "023da4cc_957a6b66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-10-26T21:02:33Z",
+      "side": 1,
+      "message": "Thanks for the reviews.",
+      "revId": "110895f9a5a611ce1fdc00e5fb03c2e7e5845799",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08f96f43_018fc00c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-10-26T21:02:33Z",
+      "side": 1,
+      "message": "This is a critical problem causing the full outage of Gerrit because of the collapsing of the HTTP thread pool. It is worth a back-port IMHO.",
+      "parentUuid": "51bafbb3_90ebb80d",
+      "revId": "110895f9a5a611ce1fdc00e5fb03c2e7e5845799",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
