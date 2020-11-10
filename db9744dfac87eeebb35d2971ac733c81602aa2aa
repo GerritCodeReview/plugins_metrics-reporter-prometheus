@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02c7ad02_a53f97f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2020-11-10T16:28:42Z",
+      "side": 1,
+      "message": "I have applied that configuration and ... it does not filter out the metrics. I have to try again and I will amend with a proper example.",
+      "revId": "db9744dfac87eeebb35d2971ac733c81602aa2aa",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
