@@ -26,10 +26,22 @@ for how to configure the integration with Prometheus.
 
 plugin.@PLUGIN@.excludeMetrics
 :   Regex pattern used to exclude metrics from the report. It can be specified multiple times.
-    Note that pattern matching is done on the whole metric name, not only on a part of it.
+	Note that pattern matching is done on the whole metric name
+    (`regex.Matcher.matches()`), not only on a part of it.
     By default no metric is excluded.
-    For example, to exclude all cache metrics, use: `excludeMetrics = cache.*`
 
+	For examples:
+
+	To exclude all metrics matching `cache` at some place in their key, use:
+    `excludeMetrics = cache.*`
+
+    To exclude multiple metrics:
+	```
+    [plugin "metrics-reporter-prometheus"]
+        excludeMetrics = ^http_server_rest_api_.*
+        excludeMetrics = ^plugin_latency_.*
+        excludeMetrics = ^reviewer_suggestion_.*
+    ```
 
 [Back to @PLUGIN@ documentation index][index]
 
