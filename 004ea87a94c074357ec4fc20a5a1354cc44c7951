@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c32c4dda_80554c50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2020-11-12T20:42:47Z",
+      "side": 1,
+      "message": "That should make it a little bit easier to setup excludeMetrics rules.",
+      "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
