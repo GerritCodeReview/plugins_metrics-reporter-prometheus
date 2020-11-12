@@ -16,6 +16,40 @@
       "message": "That should make it a little bit easier to setup excludeMetrics rules.",
       "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "070a3f12_6469d46f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-11-12T21:02:32Z",
+      "side": 1,
+      "message": "Thanks, Antoine.\nI recall Shawn (rip) always said that the documentation contributions are the most important ones and very welcome, and I do agree with him.",
+      "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "978b87e1_e4b668d3",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-11-12T21:02:32Z",
+      "side": 1,
+      "message": "nit: extra empty line.",
+      "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
