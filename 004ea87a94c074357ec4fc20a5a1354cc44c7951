@@ -1,12 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-prometheus": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/287422,2",
+      "state": "SUCCESSFUL",
+      "message": "Change passed all voting jobs",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/3e17942cf89242a99cd37ab665c5f83e",
       "started": "2020-11-12T20:35:58Z",
+      "finished": "2020-11-12T20:43:28Z",
       "created": "2020-11-12T20:35:58Z",
-      "updated": "2020-11-12T20:36:00Z"
+      "updated": "2020-11-12T20:43:28Z"
     }
   }
 }
