@@ -50,6 +50,24 @@
       "message": "nit: extra empty line.",
       "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b349095f_397bef45",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2020-11-12T21:24:15Z",
+      "side": 1,
+      "message": "Indeed. And I will happily amend, letting others a change to comment before adding a new patchset :]",
+      "parentUuid": "978b87e1_e4b668d3",
+      "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
