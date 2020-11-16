@@ -68,6 +68,24 @@
       "parentUuid": "978b87e1_e4b668d3",
       "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d91729_0cbfb8bd",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2020-11-16T08:12:18Z",
+      "side": 1,
+      "message": "Done ins patchset 2",
+      "parentUuid": "b349095f_397bef45",
+      "revId": "004ea87a94c074357ec4fc20a5a1354cc44c7951",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
