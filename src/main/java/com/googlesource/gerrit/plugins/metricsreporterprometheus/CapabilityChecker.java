@@ -54,4 +54,13 @@ public class CapabilityChecker {
       return false;
     }
   }
+  
+  public boolean canViewConfig() {
+    try {
+      permissionBackend.user(userProvider.get()).check(GlobalPermission.ADMINISTRATE_SERVER);
+      return true;
+    } catch (AuthException | PermissionBackendException e) {
+      return false;
+    }
+  }
 }
