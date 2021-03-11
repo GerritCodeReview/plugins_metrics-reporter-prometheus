@@ -43,6 +43,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
   private static final String EXCLUDE_KEY = "excludeMetrics";
 
   private final GerritBuildInformationMetric gerritBuildInfoMetric;
+  private final GerritConfigInfoMetric gerritConfigInfoMetric;
   private final CapabilityChecker capabilityChecker;
   private final String prometheusBearerToken;
 
@@ -66,6 +67,9 @@ public class GerritPrometheusExporter extends MetricsServlet {
         new FilteredMetricRegistry(
             registry, s -> excludes.stream().anyMatch(e -> e.matcher(s).matches()));
 
+    this.gerritConfigInfoMetric =
+        new GerritConfigInfoMetric(registry);
+
     // Hook the Dropwizard registry into the Prometheus registry
     // via the DropwizardExports collector.
     CollectorRegistry.defaultRegistry.register(new DropwizardExports(filteredRegistry));
@@ -76,6 +80,7 @@ public class GerritPrometheusExporter extends MetricsServlet {
       throws ServletException, IOException {
     if (capabilityChecker.canViewMetrics() || canExportUsingPrometheusBearerToken(req)) {
       gerritBuildInfoMetric.compute();
+      gerritConfigInfoMetric.compute();
       super.service(req, res);
     } else {
       HttpServletResponse httpResponse = (HttpServletResponse) res;
