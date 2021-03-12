@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67b26f37_d26010e6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreporterprometheus/GerritConfigInfoMetric.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2021-03-12T07:08:50Z",
+      "side": 1,
+      "message": "Currently, there is just one label to contain a long string with the config. We could also add one label per option. If we then set the value of the metric to 1 instead of 0, it would be easy to create a plot that shows during which times the respective option was active and how some other metric behaved with or without this option.\nHowever, having a lot of labels, might impact the performance of Prometheus. This should be tested carefully. We could also create a metric per section and a label per option in that section.\nIn these cases you would have to take care of duplicate (list-type) options.",
+      "revId": "4f2bbac13feb47567f9e53fdebd36c0881f97086",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
