@@ -1,9 +1,12 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-prometheus": {
-      "state": "NOT_STARTED",
+      "state": "SCHEDULED",
+      "message": "Change has been enqueued in check",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/421158,2",
+      "started": "2024-04-19T22:10:50Z",
       "created": "2024-04-18T12:34:31Z",
-      "updated": "2024-04-19T22:10:28Z"
+      "updated": "2024-04-19T22:10:50Z"
     }
   }
 }
