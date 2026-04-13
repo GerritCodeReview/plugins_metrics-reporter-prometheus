@@ -1,12 +1,12 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-prometheus": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "RUNNING",
+      "message": "Jobs have started running",
       "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/571824,3",
       "started": "2026-04-13T08:46:45Z",
       "created": "2026-04-13T08:46:46Z",
-      "updated": "2026-04-13T08:46:46Z"
+      "updated": "2026-04-13T08:46:50Z"
     }
   }
 }
