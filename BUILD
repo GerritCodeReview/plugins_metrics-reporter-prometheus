@@ -17,6 +17,8 @@ gerrit_plugin(
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient",
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_servlet",
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_dropwizard",
+        "//lib/jetty:server",
+        "//lib/jetty:servlet",
     ],
 )
 
