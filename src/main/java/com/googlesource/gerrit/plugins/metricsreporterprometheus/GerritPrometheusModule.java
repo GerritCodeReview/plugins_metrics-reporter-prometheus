@@ -15,13 +15,14 @@ package com.googlesource.gerrit.plugins.metricsreporterprometheus;
 
 import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.config.CapabilityDefinition;
-import com.google.inject.AbstractModule;
+import com.google.gerrit.lifecycle.LifecycleModule;
 
-public class GerritPrometheusModule extends AbstractModule {
+public class GerritPrometheusModule extends LifecycleModule {
   @Override
   protected void configure() {
     bind(CapabilityDefinition.class)
         .annotatedWith(Exports.named(ViewMetricsCapability.ID))
         .to(ViewMetricsCapability.class);
+    listener().to(PrometheusMetricsServer.class);
   }
 }
