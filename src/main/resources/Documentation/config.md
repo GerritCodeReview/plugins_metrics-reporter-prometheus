@@ -24,6 +24,38 @@ authentication and do not check any ACL related to the ‘View Metrics’ global
 See [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration)
 for how to configure the integration with Prometheus.
 
+plugin.@PLUGIN@.isolateFromHttpdPool
+:	When `true`, starts a dedicated metrics HTTP server with its own thread pool,
+	isolated from Gerrit's main `httpd.threads` pool. This ensures the metrics endpoint
+	remains reachable even when Gerrit's HTTP thread pool is saturated under high load.
+
+	When enabled, the metrics are served on a separate URL:
+
+	```
+	http://<host>:<prometheusPort>/metrics
+	```
+
+	rather than the default Gerrit endpoint:
+
+	```
+	http://<host>:<httpd.listenUrl>/plugins/@PLUGIN@/metrics
+	```
+
+	Note: only bearer token authentication is supported on the isolated server.
+	Capability-based access (`View Metrics`) requires the main Gerrit HTTP server.
+	Default: `false`.
+
+plugin.@PLUGIN@.prometheusPort
+:	Port for the dedicated metrics server. Only takes effect when
+	`isolateFromHttpdPool` is `true`.
+	Default: `9090`.
+
+plugin.@PLUGIN@.metricsThreads
+:	Number of threads in the dedicated metrics server pool. Only takes effect when
+	`isolateFromHttpdPool` is `true`. Cannot be set below 4, as Jetty requires a
+	minimum of 4 threads (1 acceptor, 1 selector, 1 reserved, 1 handler).
+	Default: `4`.
+
 plugin.@PLUGIN@.excludeMetrics
 :   Regex pattern used to exclude metrics from the report.
 

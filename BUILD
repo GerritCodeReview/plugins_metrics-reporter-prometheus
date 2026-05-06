@@ -18,6 +18,10 @@ gerrit_plugin(
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_servlet",
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_dropwizard",
     ],
+    provided_deps = [
+        "//lib/jetty:server",
+        "//lib/jetty:servlet",
+    ]
 )
 
 gerrit_plugin_dependency_tests(plugin = "metrics-reporter-prometheus")
