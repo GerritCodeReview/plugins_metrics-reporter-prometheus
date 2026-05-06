@@ -14,5 +14,7 @@ gerrit_plugin(
         "@prometheus_simpleclient_common//jar",
         "@prometheus_simpleclient_servlet//jar",
         "@metrics_prometheus//jar",
+        "//lib/jetty:server",
+        "//lib/jetty:servlet",
     ],
 )
