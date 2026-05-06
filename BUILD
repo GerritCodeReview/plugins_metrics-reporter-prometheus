@@ -3,6 +3,17 @@ load(
     "gerrit_plugin",
     "gerrit_plugin_dependency_tests",
 )
+load("@rules_java//java:defs.bzl", "java_library")
+
+java_library(
+    name = "gerrit_provided_deps",
+    neverlink = 1,
+    exports = [
+        "//lib:servlet-api",
+        "//lib/jetty:server",
+        "//lib/jetty:servlet",
+    ],
+)
 
 gerrit_plugin(
     name = "metrics-reporter-prometheus",
@@ -18,6 +29,9 @@ gerrit_plugin(
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_servlet",
         "@metrics-reporter-prometheus_plugin_deps//:io_prometheus_simpleclient_dropwizard",
     ],
+    provided_deps = [
+        ":gerrit_provided_deps",
+    ]
 )
 
 gerrit_plugin_dependency_tests(plugin = "metrics-reporter-prometheus")
