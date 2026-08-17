@@ -16,6 +16,24 @@
       "message": "Do we actually still need the pom.xml file? At least `io.dropwizard.metrics:metrics-core` is outdated compared to Gerrit (master-branch)",
       "revId": "9d48c7b4895e976d25eed58d1315c74f0ae01495",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98e48947_dcb07eb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2026-08-17T13:19:43Z",
+      "side": 1,
+      "message": "I think it could be removed. But i\u0027m not sure if it\u0027s used and just fixing the wrong class used.",
+      "parentUuid": "92eff73c_23292e22",
+      "revId": "9d48c7b4895e976d25eed58d1315c74f0ae01495",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
